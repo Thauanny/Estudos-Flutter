@@ -16,15 +16,20 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: Text(
+          "Contador",
+          style: Theme.of(context).textTheme.headline6,
+        ),
       ),
       body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         // Column herda de flex que herda multichildrender -> childers[multelements]
         Center(
-            child: Text("Contador: $counter", style: TextStyle(fontSize: 40))),
+            child: Text("Contador: $counter",
+                style: Theme.of(context).textTheme.headline4)),
         SwitchListTile(
             secondary: const Icon(Icons.lightbulb_outline),
-            title: const Text('Change Theme'),
+            title: Text('Change Theme',
+                style: Theme.of(context).textTheme.subtitle1),
             value: AppController.instance.isDarkTheme,
             onChanged: (value) => AppController.instance.changeTheme()),
       ]),

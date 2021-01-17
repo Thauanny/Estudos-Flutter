@@ -15,6 +15,12 @@ class AppWidget extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
+              textTheme: TextTheme(
+                headline6: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
               primarySwatch: Colors.green,
               brightness: AppController.instance.isDarkTheme
                   ? Brightness.dark

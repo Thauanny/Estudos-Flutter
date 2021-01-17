@@ -1,6 +1,7 @@
-import 'package:Projeto1/app_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'custom_switch_theme.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,22 +17,34 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Contador",
-          style: Theme.of(context).textTheme.headline6,
-        ),
+        title: Text("Contador", style: Theme.of(context).textTheme.headline6),
+        actions: [
+          Container(
+            padding: EdgeInsets.only(right: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(child: Icon(Icons.home)),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(right: 30.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(child: Icon(Icons.settings)),
+              ],
+            ),
+          ),
+        ],
       ),
       body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         // Column herda de flex que herda multichildrender -> childers[multelements]
         Center(
             child: Text("Contador: $counter",
                 style: Theme.of(context).textTheme.headline4)),
-        SwitchListTile(
-            secondary: const Icon(Icons.lightbulb_outline),
-            title: Text('Change Theme',
-                style: Theme.of(context).textTheme.subtitle1),
-            value: AppController.instance.isDarkTheme,
-            onChanged: (value) => AppController.instance.changeTheme()),
+        CurstomSwitchTheme(),
       ]),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),

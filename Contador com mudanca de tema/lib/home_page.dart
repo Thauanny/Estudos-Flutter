@@ -28,10 +28,18 @@ class HomePageState extends State<HomePage> {
             value: AppController.instance.isDarkTheme,
             onChanged: (value) => AppController.instance.changeTheme()),
       ]),
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        child: Container(
+          height: 50.0,
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
-          foregroundColor: Colors.white,
-          child: Icon(Icons.add),
-          onPressed: () => setState(() => counter++)),
+        foregroundColor: Colors.white,
+        child: Icon(Icons.add),
+        onPressed: () => setState(() => counter++),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   } //Build
 } // HomePage

@@ -1,9 +1,8 @@
-# Estudos com Flutter
+# Contador Com Mudança de Tema
 
 Começo dos estudos com flutter.
 
 ## Executar
-Em cada pasta especifica rodar com:
 
 ```
 flutter run

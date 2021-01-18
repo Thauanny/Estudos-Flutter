@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_switch_theme.dart';
+import 'list_grid.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,7 +40,7 @@ class HomePageState extends State<HomePage> {
         children: [
           Container(
             padding: EdgeInsets.only(top: 2.0),
-            child: CurstomSwitchTheme(),
+            child: CurstomSwitchTheme(), // changeTheme
           ),
           Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,34 +57,9 @@ class HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: 250.0),
               margin: EdgeInsets.only(left: 20.0),
               child: Text("Lista - ",
-                  style: Theme.of(context).textTheme.headline4)),
-          Container(
-            padding: EdgeInsets.only(top: 300.0),
-            child: GridView.count(
-                crossAxisCount: 3,
-                children: List.generate(100, (index) {
-                  /* para ver exemplo usando array : http://www.macoratti.net/19/07/flut_gridv1.htm*/
-                  return Center(
-                      child: Container(
-                    width: 80,
-                    height: 80,
-                    color: Colors.amberAccent,
-                  ));
-                })),
-          ),
-          Stack(
-            children: [
-              Container(
-                //padding: EdgeInsets.only(top: 300.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [],
-                ),
-              )
-            ],
-          ),
-        ],
+                  style: Theme.of(context).textTheme.headline5)),
+          Listgrid(),
+        ], //children
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),

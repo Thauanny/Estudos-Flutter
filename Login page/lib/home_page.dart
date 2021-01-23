@@ -31,6 +31,9 @@ class HomePageState extends State<HomePage> {
                 Container(
                     padding: EdgeInsets.only(right: 15.0),
                     child: Icon(Icons.settings)),
+                Container(
+                    padding: EdgeInsets.only(right: 15.0),
+                    child: Icon(Icons.logout)),
               ],
             ),
           )

@@ -1,3 +1,4 @@
+import 'package:Projeto1/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -87,17 +88,9 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
-                            _snackBarKey.currentState.showSnackBar(SnackBar(
-                              content: Text(
-                                "Entrando",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              duration: Duration(seconds: 3),
-                              backgroundColor: Colors.blue,
-                            ));
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()));
                           } else {
                             _snackBarKey.currentState.showSnackBar(SnackBar(
                               content: Text(

@@ -1,4 +1,5 @@
 import 'package:Projeto1/app_controller.dart';
+import 'package:Projeto1/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'app_controller.dart';
@@ -25,7 +26,11 @@ class AppWidget extends StatelessWidget {
               brightness: AppController.instance.isDarkTheme
                   ? Brightness.dark
                   : Brightness.light),
-          home: LoginPage(),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => LoginPage(),
+            '/home': (context) => HomePage()
+          },
         );
       },
     );

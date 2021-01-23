@@ -33,7 +33,13 @@ class HomePageState extends State<HomePage> {
                     child: Icon(Icons.settings)),
                 Container(
                     padding: EdgeInsets.only(right: 15.0),
-                    child: Icon(Icons.logout)),
+                    child: Container(
+                        child: GestureDetector(
+                      child: Icon(Icons.logout),
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed('/');
+                      },
+                    ))),
               ],
             ),
           )

@@ -1,4 +1,3 @@
-import 'package:Projeto1/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,14 +27,12 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
+                  Container(
+                    width: 150,
+                    height: 150,
                     padding: const EdgeInsets.only(bottom: 30),
                     child: Image.asset(
                       'assets/login.png',
-                      width: 150,
-                      height: 150,
-                      fit: BoxFit.contain,
-                      alignment: Alignment.topCenter,
                     ),
                   ),
                   Container(
@@ -49,7 +46,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextFormField(
                     key: ValueKey('formEmaillKey'),
-                    onChanged: (text) => print(text),
                     validator: (value) {
                       if (value.isEmpty) {
                         return 'Please enter some email';
@@ -88,9 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (context) => HomePage()));
+                            Navigator.of(context).pushReplacementNamed('/home');
                           } else {
                             _snackBarKey.currentState.showSnackBar(SnackBar(
                               content: Text(

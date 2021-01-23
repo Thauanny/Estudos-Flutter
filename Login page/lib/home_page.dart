@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'app_controller.dart';
 import 'custom_switch_theme.dart';
 import 'list_grid.dart';
 
@@ -38,6 +39,9 @@ class HomePageState extends State<HomePage> {
                       child: Icon(Icons.logout),
                       onTap: () {
                         Navigator.of(context).pushReplacementNamed('/');
+                        if (AppController.instance.isDarkTheme) {
+                          AppController.instance.changeTheme();
+                        }
                       },
                     ))),
               ],

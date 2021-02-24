@@ -19,7 +19,7 @@ class HomeController {
 
   void convert() {
     String text = toText.text;
-    double value = double.tryParse(text.replaceAll(',', '.')) ?? 1.0;
+    double value = double.tryParse(text.replaceAll(',', '.')) ?? 0.0;
     double retornarValue = 0;
 
     if (fromCurrency.name == "Real") {

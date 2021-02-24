@@ -10,6 +10,12 @@ class CurrencyModel {
   static List<CurrencyModel> getCurrencies() {
     return <CurrencyModel>[
       CurrencyModel(
+        name: 'Selecione',
+      ),
+      CurrencyModel(
+        name: 'Selecione',
+      ),
+      CurrencyModel(
         name: 'Real',
         real: 1.0,
         dolar: 0.18,

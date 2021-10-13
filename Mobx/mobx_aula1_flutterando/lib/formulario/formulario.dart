@@ -44,6 +44,29 @@ class _FormularioState extends State<Formulario> {
                         },
                         errorText: controller.validateEmail);
                   },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Observer(
+                  builder: (_) {
+                    return _textField(
+                        labelText: "Nome",
+                        onChange: (String value) {
+                          controller.client.changeName((value));
+                        },
+                        errorText: controller.validateName);
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Observer(
+                  builder: (_) {
+                    return ElevatedButton(
+                        onPressed: controller.isValid ? () {} : null,
+                        child: Text("salvar"));
+                  },
                 )
               ],
             ),

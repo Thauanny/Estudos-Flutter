@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mobx_aula1_flutterando/formulario/formulario_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,9 @@ class _FormularioState extends State<Formulario> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<FormularioController>(context);
+    // final controller =
+    // Provider.of<FormularioController>(context); //utiliando provider
+    final controller = GetIt.I.get<FormularioController>();
     return Scaffold(
       appBar: AppBar(),
       body: Padding(

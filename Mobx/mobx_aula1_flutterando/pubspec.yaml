@@ -28,6 +28,7 @@ dependencies:
   mobx:
   flutter_mobx: ^2.0.2
   provider:
+  get_it:
 
 
 dev_dependencies:

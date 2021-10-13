@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_aula1_flutterando/formulario/formulario_controller.dart';
+import 'package:provider/provider.dart';
 
 class Formulario extends StatefulWidget {
   const Formulario({Key? key}) : super(key: key);
@@ -10,7 +11,6 @@ class Formulario extends StatefulWidget {
 }
 
 class _FormularioState extends State<Formulario> {
-  final controller = FormularioController();
   _textField(
       {required String labelText,
       required void Function(String value) onChange,
@@ -26,6 +26,7 @@ class _FormularioState extends State<Formulario> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<FormularioController>(context);
     return Scaffold(
       appBar: AppBar(),
       body: Padding(

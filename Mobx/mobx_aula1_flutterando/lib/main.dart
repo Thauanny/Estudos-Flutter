@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'formulario/formulario_controller.dart';
 import 'home/home_page.dart';
 
 void main() {
@@ -9,12 +11,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        Provider<FormularioController>(create: (_) => FormularioController())
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

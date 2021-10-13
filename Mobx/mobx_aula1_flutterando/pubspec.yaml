@@ -27,6 +27,7 @@ dependencies:
   slidy: ^3.2.2+1
   mobx:
   flutter_mobx: ^2.0.2
+  provider:
 
 
 dev_dependencies:

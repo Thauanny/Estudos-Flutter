@@ -1,4 +1,5 @@
 //dip - depender de abstrações e não de classes concretas
+//programar focado em interface e nao em implementacao
 
 class PagamentoRepository {
   void save() => print;

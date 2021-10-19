@@ -12,20 +12,21 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Observer(
-        builder: (_) => ListTile(
-              title: Text(item.title),
-              leading: Checkbox(
-                value: item.check,
-                onChanged: (bool? value) {
-                  item.setCheck(value!);
-                },
-              ),
-              trailing: IconButton(
-                  color: Colors.red,
-                  icon: Icon(Icons.remove_circle),
-                  onPressed: () {
-                    removedClicked(item);
-                  }),
-            ));
+      builder: (_) => ListTile(
+        title: Text(item.title),
+        leading: Checkbox(
+          value: item.check,
+          onChanged: (bool? value) {
+            item.setCheck(value!);
+          },
+        ),
+        trailing: IconButton(
+            color: Colors.red,
+            icon: Icon(Icons.remove_circle),
+            onPressed: () {
+              removedClicked(item);
+            }),
+      ),
+    );
   }
 }

@@ -57,10 +57,11 @@ class Listagem extends StatelessWidget {
             Observer(
               builder: (_) {
                 return Center(
-                    child: Padding(
-                  padding: const EdgeInsets.only(right: 20.0),
-                  child: Text(controller.totalChecked.toString()),
-                ));
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: Text(controller.totalChecked.toString()),
+                  ),
+                );
               },
             )
           ],

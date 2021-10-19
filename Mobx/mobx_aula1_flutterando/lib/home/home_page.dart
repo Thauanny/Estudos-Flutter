@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
-import 'package:mobx_aula1_flutterando/formulario/formulario.dart';
+import 'package:mobx_aula1_flutterando/formulario/formulario_page.dart';
 import 'package:mobx_aula1_flutterando/home/counter_store.dart';
 import 'package:mobx_aula1_flutterando/home/home_controller.dart';
 
@@ -34,10 +34,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          InkWell(
-              child: Icon(Icons.arrow_forward_ios),
-              onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Formulario()))),
+          Row(
+            children: [
+              Text("Next Page"),
+              InkWell(
+                  child: Icon(Icons.arrow_forward_ios),
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => Formulario()))),
+            ],
+          ),
         ],
         title: Text(widget.title ?? ''),
       ),

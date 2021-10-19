@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-import 'package:mobx_aula1_flutterando/models/client.dart';
+import 'package:mobx_aula1_flutterando/formulario/models/client.dart';
 part 'formulario_controller.g.dart';
 
 class FormularioController = _FormularioControllerBase
@@ -31,5 +31,12 @@ abstract class _FormularioControllerBase with Store {
     } else {
       return null;
     }
+  }
+
+  bool validateLogin() {
+    if (client.email == "eu@.com") {
+      return true;
+    }
+    return false;
   }
 }

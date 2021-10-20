@@ -29,6 +29,7 @@ dependencies:
   flutter_mobx: ^2.0.2
   provider:
   get_it:
+  rxdart: ^0.26.0
 
 
 dev_dependencies:

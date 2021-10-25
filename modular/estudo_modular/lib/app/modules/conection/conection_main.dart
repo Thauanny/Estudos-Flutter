@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:estudo_modular/app/modules/conection/repository/repository.dart';
 
 main() async {
-  final product = Product(DioImp());
+  final product = Product(DioService());
 
   final list = await product.fecthProducts();
 }

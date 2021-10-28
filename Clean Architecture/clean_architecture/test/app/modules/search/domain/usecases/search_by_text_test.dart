@@ -27,14 +27,18 @@ main() {
     });
 
     test('call should return a list of ResultSearch', () async {
-      final result = await useCase!.call(searchText: 'Thauanny');
+      final Either<FailureSearch, List<ResultSearch>> result =
+          await useCase!.call(searchText: 'Thauanny');
 
       expect(result, isA<Right<FailureSearch, List<ResultSearch>>>());
     });
     test('call should return a Exception', () async {
-      final dynamic result = await useCase!.call(searchText: '');
+      final Either<FailureSearch, List<ResultSearch>> result =
+          await useCase!.call(searchText: '');
 
-      expect(result, isA<Left<FailureSearch, List<ResultSearch>>>());
+      expect(result.fold((l) => l, (r) => r), isA<InvalidTextError>());
+      //outra forma de testar:
+      expect(result.isLeft(), true);
     });
   });
 }
